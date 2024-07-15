@@ -1,0 +1,40 @@
+.advice-container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+  }
+  
+  .advice-nav {
+    width: 200px;
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+  }
+  
+  .advice-nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .advice-nav li {
+    margin: 10px 0;
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .advice-nav li:hover {
+    text-decoration: underline;
+  }
+  
+  .advice-content {
+    flex-grow: 1;
+    padding-left: 20px;
+  }
+  
+  .advice-content h2 {
+    color: #333;
+  }
+  
+  .advice-content p {
+    color: #666;
+  }
+  

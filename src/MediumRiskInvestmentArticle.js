@@ -1,0 +1,100 @@
+import React from 'react';
+
+const MediumRiskInvestmentArticle = () => {
+  return (
+    <div style={styles.fullScreenContainer}>
+      <div style={styles.articleContainer}>
+        <h1 style={styles.title}>Medium Risk Investment Plans</h1>
+        <p style={styles.paragraph}>
+          Medium-risk investment plans aim to strike a balance between potential returns and risk exposure. Here's a structured approach to consider:
+        </p>
+        
+        <div style={styles.section}>
+          <h2 style={styles.subtitle}>Allocation Strategy</h2>
+          <p style={styles.paragraph}>
+            Allocate your investment portfolio as follows:
+          </p>
+          <ul style={styles.list}>
+            <li style={styles.listItem}><strong>70% in Nifty Fifty Companies:</strong> These are large-cap companies known for stable performance and market presence.</li>
+            <li style={styles.listItem}><strong>20% in Mid-Level Index Companies:</strong> Invest in mid-cap companies that have potential for growth but may be more volatile.</li>
+            <li style={styles.listItem}><strong>10% in Small Index Companies:</strong> Allocate to small-cap companies with higher growth potential but higher risk.</li>
+          </ul>
+        </div>
+        
+        <div style={styles.section}>
+          <h2 style={styles.subtitle}>Why Nifty Fifty?</h2>
+          <p style={styles.paragraph}>
+            Nifty Fifty companies are well-established, blue-chip firms that typically offer stability and consistent dividends. They are less volatile compared to smaller companies.
+          </p>
+        </div>
+        
+        <div style={styles.section}>
+          <h2 style={styles.subtitle}>Benefits of Mid and Small Index Companies</h2>
+          <p style={styles.paragraph}>
+            - <strong>Mid-Level Index Companies:</strong> These companies provide a balance between growth potential and risk. They are generally more dynamic and can offer significant returns over time.<br />
+            - <strong>Small Index Companies:</strong> Small-cap stocks can provide high returns, especially during market uptrends, but they come with higher risk and volatility.
+          </p>
+        </div>
+        
+        <div style={styles.section}>
+          <h2 style={styles.subtitle}>Considerations</h2>
+          <p style={styles.paragraph}>
+            - Regularly review and adjust your portfolio to maintain the desired allocation.<br />
+            - Consider using mutual funds or exchange-traded funds (ETFs) to gain diversified exposure to different market segments.<br />
+            - Stay informed about market trends and economic conditions that may impact your investments.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const styles = {
+  fullScreenContainer: {
+    width: '100vw',
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f0f0f0',  // Light gray background
+  },
+  articleContainer: {
+    backgroundColor: '#fff',
+    padding: '2rem',
+    borderRadius: '15px',
+    boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)',
+    width: '90%',
+    maxWidth: '800px',
+    lineHeight: '1.6',
+    fontFamily: 'Arial, sans-serif',
+  },
+  title: {
+    fontSize: '2.5rem',
+    color: '#000dff',
+    marginBottom: '1rem',
+    textAlign: 'center'
+  },
+  subtitle: {
+    fontSize: '1.5rem',
+    color: '#000dff',
+    marginBottom: '0.5rem'
+  },
+  paragraph: {
+    fontSize: '1rem',
+    color: '#333',
+    marginBottom: '1rem'
+  },
+  section: {
+    marginBottom: '2rem'
+  },
+  list: {
+    margin: '1rem 0',
+    paddingLeft: '1rem',
+    listStyleType: 'disc'
+  },
+  listItem: {
+    marginBottom: '0.5rem'
+  }
+};
+
+export default MediumRiskInvestmentArticle;

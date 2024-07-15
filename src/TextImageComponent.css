@@ -1,0 +1,38 @@
+.text-image-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .text-image-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem; /* Adjust margin between sections as needed */
+  }
+  
+  .text {
+    flex: 1;
+    padding: 0 1rem; /* Adjust padding around text */
+  }
+  
+  .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .paragraph{
+    font-size: 18px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .text-image-content {
+      flex-direction: column;
+    }
+  }
+  
+  
