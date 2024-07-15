@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken'); // for creating JSON web tokens
 const User = require("../Models/users");
-const { sendEmail } = require("../middlewares/sendmail"); // Correct import path
+// const { sendEmail } = require("../middlewares/sendmail"); // Correct import path
 
 // Create a new user (Signup)
 exports.createUser = async (req, res) => {
@@ -26,11 +26,11 @@ exports.createUser = async (req, res) => {
         });
 
         // Send email
-        await sendEmail({
-            email: newUser.email,
-            subject: "Welcome to FinanceApp",
-            message: "Thank you for signing up with us."
-        });
+        // await sendEmail({
+        //     email: newUser.email,
+        //     subject: "Welcome to FinanceApp",
+        //     message: "Thank you for signing up with us."
+        // });
 
         // Generate JWT token
         const token = generateToken(newUser._id);
