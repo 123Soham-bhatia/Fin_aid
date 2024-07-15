@@ -16,7 +16,7 @@ app.use(cors()); // Using cors middleware
 app.use(cookieParser());
 app.use(express.json());
 const corsOptions = {
-    origin: 'http://localhost:3001', // Replace with your frontend domain
+    origin: 'https://finaid-git-main-soham01s-projects.vercel.app/', // Replace with your frontend domain
     optionsSuccessStatus: 200 // Some legacy browsers choke on 204
 };
 
