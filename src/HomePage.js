@@ -2,7 +2,10 @@ import React from 'react';
 import Navbar from './Navbar'; 
 import "./HomePage.css" // Adjust the import path as necessary
 
+
 const HomePage = () => {
+  // const {status} = useContext(AppContext);
+  const status = localStorage.getItem('user_status');
   return (
     <div>
       <Navbar />
@@ -35,7 +38,7 @@ const HomePage = () => {
                 <p style={styles.categoryDescription}>Find out where to invest your money for the best returns.</p>
               </div>
             </a>
-            <a href='/budget_planning' style={styles.categoryLink}>
+            <a href={status? '/budget_planning':'/profile'} style={styles.categoryLink}>
               <div style={styles.category}>
                 <h3 style={styles.categoryTitle}>Budget Planning</h3>
                 <p style={styles.categoryDescription}>Create a budget that works for you and helps you achieve your financial goals.</p>

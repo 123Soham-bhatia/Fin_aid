@@ -44,13 +44,15 @@ const styles = {
   },
   logo: {
     fontSize: '1.5rem',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    paddingLeft : '15px'
   },
   navLinks: {
     display: 'flex',
     listStyle: 'none',
     margin: '0',
-    padding: '0'
+    paddingRight: '30px',
+    font:'bold'
   },
   navItem: {
     margin: '0 1rem'
