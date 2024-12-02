@@ -1,12 +1,23 @@
 const mongoose = require('mongoose');
+require("dotenv").config(); // Load environment variables
 
-// require("dotenv").config();
+const dbconnect = () => {
+    const dbUrl = process.env.DATABASE_URL; // Fetching the URL from .env
 
-const dbconnect = ()=>{
-    mongoose.connect("mongodb+srv://sohambha96:92tvYNOBmmoKHrNu@cluster0.exmehwd.mongodb.net/",{dbName:"finance", })
-    .then(()=>{
-        console.log("db connection is possible  at port no 3000")
+    if (!dbUrl) {
+        console.error("DATABASE_URL is not defined in the environment variables.");
+        return;
+    }
+
+    mongoose.connect(dbUrl, { 
+        dbName: "finance" 
     })
-}
+    .then(() => {
+        console.log("DB connection successful!");
+    })
+    .catch((err) => {
+        console.error("DB connection error:", err.message);
+    });
+};
 
-module.exports = dbconnect ;
+module.exports = dbconnect;
