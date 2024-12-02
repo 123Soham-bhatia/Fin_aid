@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    image: soham123123/backend-images:latest
+    ports:
+      - "4000:4000"
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017/finance
+      - JWT_SECRET=WER24R
+    depends_on:
+      - mongo
+
+  frontend:
+    image: soham123123/frontend-images:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:5
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
