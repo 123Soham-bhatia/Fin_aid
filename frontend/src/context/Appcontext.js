@@ -25,7 +25,7 @@ const AppContextProvider = ({ children }) => {
   const fetchSavings = async (userId) => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/savings/${userId}`);
+      const response = await axios.get(`https://fin-aid.onrender.com/savings/${userId}`);
       setSavings(response.data);
     } catch (error) {
       console.error('Error fetching savings:', error);
@@ -38,7 +38,7 @@ const AppContextProvider = ({ children }) => {
   const analysis = async (user_id, Month) => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/getpercentage/${user_id}?month=${Month}`);
+      const response = await axios.get(`https://fin-aid.onrender.com/getpercentage/${user_id}?month=${Month}`);
       setpercentage(response.data);
       if (percentage.luxuriesPercentage !== null || percentage.necessaryPercentage !== null || percentage.savingPercentage !== null) {
         localStorage.setItem("percentage", JSON.stringify(response.data));
@@ -54,7 +54,7 @@ const AppContextProvider = ({ children }) => {
   const getallgoals = async (userd) => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/all_goals/${userd}`);
+      const response = await axios.get(`https://fin-aid.onrender.com/all_goals/${userd}`);
       setgoals(response.data);
     } catch (error) {
       console.error('Error fetching goals:', error);
@@ -66,7 +66,7 @@ const AppContextProvider = ({ children }) => {
   const fetchTransactions = async (user_id, Month, Category) => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/readtransaction?user=${user_id}&month=${Month}&category=${Category}`);
+      const response = await axios.get(`https://fin-aid.onrender.com/readtransaction?user=${user_id}&month=${Month}&category=${Category}`);
       setTransactions(response.data.transactions);
     } catch (error) {
       console.error('Error fetching transactions:', error);
@@ -78,7 +78,7 @@ const AppContextProvider = ({ children }) => {
   const loginUser = async (email, password) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/loginuser', {
+      const response = await axios.post('https://fin-aid.onrender.com/loginuser', {
         email,
         password,
       });
@@ -98,7 +98,7 @@ const AppContextProvider = ({ children }) => {
   const createUser = async (username, email, password) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/createUser', {
+      const response = await axios.post('https://fin-aid.onrender.com/createUser', {
         username, email, password,
       });
       console.log(response.data);
@@ -140,7 +140,7 @@ const AppContextProvider = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('http://localhost:4000/api/v1/readuser');
+      const response = await axios.get('https://fin-aid.onrender.com/readuser');
       setUsers(response.data);
       setLoading(false);
       return response.data;
@@ -155,7 +155,7 @@ const AppContextProvider = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/readSingleUser/${userId}`);
+      const response = await axios.get(`https://fin-aid.onrender.com/readSingleUser/${userId}`);
       setUser(response.data);
       setLoading(false);
       return response.data;
@@ -170,7 +170,7 @@ const AppContextProvider = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.put(`http://localhost:4000/api/v1/updateUser/${userId}`, userData);
+      const response = await axios.put(`https://fin-aid.onrender.com/updateUser/${userId}`, userData);
       setLoading(false);
       return response.data;
     } catch (error) {
@@ -183,7 +183,7 @@ const AppContextProvider = ({ children }) => {
   const creategoal = async (userId, goalData) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/creategoal', {
+      const response = await axios.post('https://fin-aid.onrender.com/creategoal', {
         userId, ...goalData
       });
       setLoading(false);
@@ -198,7 +198,7 @@ const AppContextProvider = ({ children }) => {
   const creatransaction = async (userId, formData) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/createtransaction', {
+      const response = await axios.post('https://fin-aid.onrender.com/createtransaction', {
         user: userId,
         ...formData
       });
